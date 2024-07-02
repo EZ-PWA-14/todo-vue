@@ -1,22 +1,18 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <ul class="list-group">
-        <TodoListItem v-for="todoItem in todoList" :key="todoItem.id" :todoItem="todoItem"
-          @delete-todo="$emit('delete-todo', $event)" @toggle-completed="$emit('toggle-completed', $event)" />
-      </ul>
-    </div>
-  </div>
+  <li class="list-group-item" :class="{ 'list-group-item-success': todoItem.completed }"
+    @click="$emit('toggle-completed', todoItem.id)">
+    <span class="pointer" :class="{ 'todo-done': todoItem.completed }">
+      {{ todoItem.todo }} {{ todoItem.completed ? "(완료)" : "" }}
+    </span>
+    <span class="float-end badge bg-secondary pointer" @click.stop="$emit('delete-todo', todoItem.id)">삭제</span>
+  </li>
 </template>
 
 <script>
-import TodoListItem from './TodoListItem.vue';
-
 export default {
-  name: "TodoList",
-  components: { TodoListItem },
+  name: "TodoListItem",
   props: {
-    todoList: { type: Array, required: true }
+    todoItem: { type: Object, required: true }
   },
   emits: ["delete-todo", "toggle-completed"],
 };
