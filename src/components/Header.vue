@@ -8,17 +8,17 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <router-link class="nav-link" to="/">
-            Home
+            대시보드
           </router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/about">
-            About
+            정보 보기
           </router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/todos">
-            TodoList
+            투두리스트 보기
           </router-link>
         </li>
       </ul>
@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+import { ref } from 'vue';
 
-  const isNavShow = ref(false);
+const isNavShow = ref(false);
 </script>

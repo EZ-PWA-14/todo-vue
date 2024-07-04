@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/todo-vue/",
   plugins: [vue()],
   resolve: {
     alias: {
@@ -15,7 +16,6 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://todosvc.bmaster.kro.kr/",
-        // target: "http://localhost:8000",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

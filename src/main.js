@@ -1,11 +1,18 @@
+// App & Pinia importing
 import { createApp } from 'vue';
-import App from './App.vue';
-import 'bootstrap/dist/css/bootstrap.css';
-import router from './router/index.js';
-import './main.css';
-// 상태관리를 위한 pinia 가져오기
 import { createPinia } from 'pinia';
 
-const pinia = createPinia(); // 인스턴스 생성
+// App initialize
+import App from './App.vue';
+
+// Router initialize
+import router from './router/index.js';
+
+// CSS initialize
+import 'bootstrap/dist/css/bootstrap.css';
+import './main.css';
+
+// App create & App mount 
+const pinia = createPinia();
 const app = createApp(App);
-app.use(pinia).use(router).mount('#app'); // 사용선언
+app.use(pinia).use(router).mount('#app');

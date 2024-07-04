@@ -2,13 +2,9 @@ import { defineStore } from "pinia";
 import { reactive, computed } from 'vue';
 import axios from 'axios';
 
-//1. BASEURI는 vite.config.js의 프록시 설정에 맞추어 지정합니다.
-//2. owner는 샘플 백엔드 API 서버(https://sample.bmaster.kro.kr)의 
-//   문서를 참조하여 지정합니다. 기본값 gdhong 데이터는 존재합니다.
 const owner = "gdhong";
 const BASEURI = "/api/todolist_long";
 
-//todoList1 스토어 정의, 컴포지션API
 export const useTodoListStore = defineStore("todoList2", () => {
   const state = reactive({
     todoList: [],
